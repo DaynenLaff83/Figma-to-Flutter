@@ -1,18 +1,24 @@
+
 import 'package:flutter/material.dart';
+import 'app_theme.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(const SpookyFindApp());
+  runApp(const MyApp());
 }
 
-class SpookyFindApp extends StatelessWidget {
-  const SpookyFindApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'SpookyFind',
-      home: HomeScreen(),
+    return MaterialApp(
+      title: 'Spooky Find',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system,
+      home: const HomeScreen(),
     );
   }
 }
